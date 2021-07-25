@@ -1,7 +1,5 @@
 import React from 'react';
-// Types
 import { AnswerObject } from '../App';
-// Styles
 import { Wrapper, ButtonWrapper } from './QuestionCard.styles';
 
 type Props = {

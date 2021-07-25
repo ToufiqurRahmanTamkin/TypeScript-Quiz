@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import { fetchQuizQuestions } from './API';
-// Components
 import QuestionCard from './components/QuestionCard';
-// types
 import { QuestionsState, Difficulty } from './API';
-// Styles
 import { GlobalStyle, Wrapper } from './App.styles';
 
 export type AnswerObject = {
@@ -40,13 +37,9 @@ const App: React.FC = () => {
 
   const checkAnswer = (e: any) => {
     if (!gameOver) {
-      // User's answer
       const answer = e.currentTarget.value;
-      // Check answer against correct answer
       const correct = questions[number].correct_answer === answer;
-      // Add score if answer is correct
       if (correct) setScore((prev) => prev + 1);
-      // Save the answer in the array for user answers
       const answerObject = {
         question: questions[number].question,
         answer,
@@ -58,7 +51,6 @@ const App: React.FC = () => {
   };
 
   const nextQuestion = () => {
-    // Move on to the next question if not the last question
     const nextQ = number + 1;
 
     if (nextQ === TOTAL_QUESTIONS) {
